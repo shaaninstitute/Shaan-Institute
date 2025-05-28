@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shaan Institute - Fashion Designing Academy</title>
+  <style>
+    /* Reset and base */
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f0f8ff;
+        color: #34495e;
+        line-height: 1.6;
+    }
+    a {
+        text-decoration: none;
+        color: #2980b9;
+    }
+    a:hover {
+        color: #1c5980;
+    }
+    img {
+        max-width: 100%;
+        display: block;
+        height: auto;
+    }
+    /* Container */
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+    }
+    /* Header */
+    header {
+        background: #d6e9fc;
+        padding: 1rem 0;
+        box-shadow: 0 2px 8px rgba(41, 128, 185, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+    }
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      color: #2980b9;
+      font-family: 'Georgia', serif;
+      letter-spacing: 2px;
+    }
+    .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+    .since {
+        font-size: 1rem;
+        font-style: italic;
+        color: #1c5980;
+        margin-top: 0.1rem;
+    }
+    .registration {
+      font-size: 0.9rem;
+      color: #1c5980;
+      margin-top: 0.1rem;
+      font-style: normal;
+      font-weight: 600;
+    }
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+    }
+    nav ul li {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+    nav ul li a {
+        padding: 0.3rem 0.5rem;
+        border-radius: 4px;
+        transition: background 0.25s ease;
+    }
+    nav ul li a:hover {
+        background: #2980b9;
+        color: white;
+    }
+    /* Hero */
+    .hero {
+        background: url('https://images.unsplash.com/photo-1519682337058-a94d519337bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+        color: white;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+    }
+    .hero-text {
+        background: rgba(41, 128, 185, 0.8);
+        padding: 2rem 3rem;
+        border-radius: 8px;
+        max-width: 600px;
+        margin-left: 3rem;
+    }
+    .hero-text h1 {
+        font-size: 3.5rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: 2px;
+    }
+    .hero-text p {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+    .btn-primary {
+        background: #fff;
+        color: #2980b9;
+        font-weight: 700;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        transition: background 0.3s ease, color 0.3s ease;
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
+    }
+    .btn-primary:hover {
+        background: #1c5980;
+        color: white;
+    }
+    /* Banner */
+    .job-banner {
+      background-color: #1c5980;
+      color: white;
+      text-align: center;
+      padding: 1rem 1.5rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      letter-spacing: 0.5px;
+      box-shadow: 0 3px 8px rgba(28, 89, 128, 0.6);
+    }
+    /* Sections */
+    section {
+        padding: 4rem 0;
+    }
+    h2.section-title {
+        text-align: center;
+        font-family: 'Georgia', serif;
+        font-size: 2.75rem;
+        margin-bottom: 2rem;
+        color: #2980b9;
+        letter-spacing: 1px;
+    }
+    p.section-description {
+        text-align: center;
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto 3rem auto;
+        color: #547799;
+    }
+    /* About */
+    #about p {
+        max-width: 850px;
+        margin: 1rem auto 0;
+        font-size: 1.1rem;
+        color: #34495e;
+    }
+    /* Courses */
+    .courses-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+        gap: 2rem;
+        max-width: 1000px;
+        margin: auto;
+    }
+    .course-card {
+        background: #e6f0fc;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(41, 128, 185, 0.15);
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease;
+    }
+    .course-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(41, 128, 185, 0.3);
+    }
+    .course-card h3 {
+        margin-bottom: 0.75rem;
+        color: #1c5980;
+    }
+    .course-card p {
+        flex-grow: 1;
+        color: #3b5163;
+        line-height: 1.5;
+    }
+    /* Contact */
+    #contact form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    #contact label {
+        font-weight: 600;
+        color: #3b5163;
+    }
+    #contact input, #contact textarea, #contact select {
+        padding: 0.75rem;
+        border-radius: 6px;
+        border: 1.5px solid #a1c4f7;
+        font-size: 1rem;
+        font-family: inherit;
+        resize: vertical;
+        transition: border-color 0.3s ease;
+    }
+    #contact input:focus, #contact textarea:focus, #contact select:focus {
+        border-color: #2980b9;
+        outline: none;
+    }
+    #contact button {
+        align-self: flex-start;
+        background: #2980b9;
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    #contact button:hover {
+        background: #1c5980;
+    }
+    /* Footer */
+    footer {
+        background: #2980b9;
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+    }
+    footer .registration {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      font-style: normal;
+      color: #cbd9f7;
+      font-weight: 600;
+    }
+    .social-links {
+        margin: 0.5rem 0 1rem 0;
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .social-links a {
+        color: white;
+        font-size: 1.3rem;
+        transition: color 0.3s ease;
+    }
+    .social-links a:hover {
+        color: #d3e3fa;
+    }
+    /* Certificate Verification */
+    #certificate-verification {
+        background: #e6f0fc;
+        border-radius: 12px;
+        max-width: 550px;
+        margin: 2rem auto 0 auto;
+        padding: 1.5rem 2rem;
+        box-shadow: 0 4px 15px rgba(41, 128, 185, 0.15);
+    }
+    #certificate-verification h3 {
+        color: #1c5980;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    #certificate-verification form {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    #certificate-verification input[type="text"] {
+        flex-grow: 1;
+        min-width: 240px;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        border: 1.5px solid #a1c4f7;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: border-color 0.3s ease;
+    }
+    #certificate-verification input[type="text"]:focus {
+        border-color: #2980b9;
+        outline: none;
+    }
+    #certificate-verification button {
+        background: #2980b9;
+        color: white;
+        border: none;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    #certificate-verification button:hover {
+        background: #1c5980;
+    }
+    #verification-result {
+        margin-top: 1rem;
+        text-align: center;
+        font-weight: 700;
+        color: #24405c;
+        min-height: 1.5rem;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .hero-text {
+            margin-left: 1rem;
+            padding: 1.5rem 2rem;
+            font-size: 0.9rem;
+        }
+        .hero-text h1 {
+            font-size: 2.25rem;
+        }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container" aria-label="Primary Navigation">
+      <div class="logo-container" tabindex="0">
+        <div class="logo">Shaan Institute</div>
+        <div class="since">Since 2008</div>
+        <div class="registration">Registration No: MAH/951/08/THANE</div>
+      </div>
+      <ul role="menubar">
+        <li role="none"><a href="#about" role="menuitem" tabindex="0">About</a></li>
+        <li role="none"><a href="#courses" role="menuitem" tabindex="0">Courses</a></li>
+        <li role="none"><a href="#certificate-verification" role="menuitem" tabindex="0">Verify Certificate</a></li>
+        <li role="none"><a href="#contact" role="menuitem" tabindex="0">Enrollment</a></li>
+        <li role="none"><a href="#location" role="menuitem" tabindex="0">Location</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" role="banner" aria-label="Hero Section">
+    <div class="hero-text">
+      <h1>Design Your Future with Style</h1>
+      <p>Join Shaan Institute to master the art of fashion creation with expert guidance and hands-on experience.</p>
+      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Enroll Now</button>
+    </div>
+  </section>
+
+  <div class="job-banner" role="region" aria-label="Job Offer Banner">
+    We offer job after completion of tailoring and fashion designing
+  </div>
+
+  <section id="about" aria-labelledby="about-title">
+    <h2 class="section-title" id="about-title">About Us</h2>
+    <p>Shaan Institute is a premier institute dedicated to nurturing creative talents in fashion and styling. With experienced instructors and state-of-the-art facilities, we empower students with skills needed to excel in the dynamic world of fashion.</p>
+  </section>
+
+  <section id="courses" aria-labelledby="courses-title">
+    <h2 class="section-title" id="courses-title">Our Courses</h2>
+    <p class="section-description">We offer a range of comprehensive courses designed to inspire and develop your fashion acumen.</p>
+    <div class="courses-grid" role="list">
+      <article class="course-card" role="listitem">
+        <h3>Fashion Designing</h3>
+        <p>Explore creativity and techniques involved in designing contemporary and classic fashion styles that make a statement.</p>
+      </article>
+      <article class="course-card" role="listitem">
+        <h3>Tailoring</h3>
+        <p>Learn precise garment construction skills including measuring, cutting, stitching, and fitting to perfection.</p>
+      </article>
+      <article class="course-card" role="listitem">
+        <h3>Mehendi</h3>
+        <p>Discover the art of traditional and contemporary mehendi designs, mastering intricate patterns for all occasions.</p>
+      </article>
+      <article class="course-card" role="listitem">
+        <h3>English Speaking</h3>
+        <p>Enhance your communication skills with expert coaching in spoken English for personal and professional growth.</p>
+      </article>
+      <article class="course-card" role="listitem">
+        <h3>Painting</h3>
+        <p>Develop your artistic talents through versatile painting techniques including watercolor, acrylic, and sketching.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="certificate-verification" aria-labelledby="cert-verification-title">
+    <h2 class="section-title" id="cert-verification-title">Certificate Verification Portal</h2>
+    <div id="certificate-verification">
+      <h3>Verify Your Certificate</h3>
+      <form id="verify-form" aria-label="Certificate Verification Form">
+        <input type="text" id="cert-id" name="cert-id" placeholder="Enter Certificate ID" aria-required="true" autocomplete="off" />
+        <button type="submit">Verify</button>
+      </form>
+      <div id="verification-result" role="alert" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-title">
+    <h2 class="section-title" id="contact-title">Enrollment</h2>
+    <p style="text-align:center;max-width:600px; margin: auto; font-size:1.1rem; color:#3b5163;">
+      Phone: <a href="tel:+919819228098">+91 98192 28098</a><br/>
+      Email: <a href="mailto:instituteshaan@gmail.com">instituteshaan@gmail.com</a>
+    </p>
+    <form id="enroll-form" aria-label="Enrollment Form">
+      <div class="container">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required autocomplete="email" />
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your phone number" required autocomplete="tel" />
+        <label for="course">Course</label>
+        <select id="course" name="course" required>
+          <option value="" disabled selected>Select a course</option>
+          <option value="Fashion Designing">Fashion Designing</option>
+          <option value="Tailoring">Tailoring</option>
+          <option value="Mehendi">Mehendi</option>
+          <option value="English Speaking">English Speaking</option>
+          <option value="Painting">Painting</option>
+        </select>
+        <label for="message">Additional Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your message or inquiry (optional)"></textarea>
+        <button type="submit">Submit Enrollment</button>
+        <div id="enroll-result" role="alert" aria-live="polite" style="font-weight:700; padding-top:0.5rem;"></div>
+      </div>
+    </form>
+  </section>
+
+  <section id="location" aria-labelledby="location-title">
+    <h2 class="section-title" id="location-title">Our Location</h2>
+    <p style="text-align:center; max-width:600px; margin: auto; font-size:1.1rem; color:#3b5163;">
+      Shimla Park, Kausa, Mumbra, Thane 400612
+    </p>
+    <div style="text-align:center;">
+      <a href="https://maps.app.goo.gl/8rTfqzbT3E3nL6uj8?g_st=atm" target="_blank" rel="noopener" id="location-link" aria-label="Open Shaan Institute location in Google Maps" style="display: inline-block; margin-top: 1rem; font-size: 1.2rem; color: #2980b9; padding: 0.75rem 1.5rem; border: 2px solid #2980b9; border-radius: 50px; transition: background-color 0.3s ease, color 0.3s ease; text-decoration: none;">
+        Open Shaan Institute Location in Google Maps
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-links" aria-label="Social media links">
+      <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer" title="Facebook">&#x1F426;</a>
+      <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer" title="Instagram">&#x1F4F7;</a>
+      <a href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer" title="Twitter">&#x1F426;</a>
+    </div>
+    &copy; 2024 Shaan Institute. All Rights Reserved.
+  </footer>
+
+  <script>
+    // Backend API URL prefix - update if different in deployment
+    const API_BASE = 'http://localhost:3000';
+
+    // Certificate verification
+    const verifyForm = document.getElementById('verify-form');
+    const verificationResult = document.getElementById('verification-result');
+
+    verifyForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const certId = document.getElementById('cert-id').value.trim();
+      if (!certId) {
+        verificationResult.textContent = 'Please enter a certificate ID.';
+        verificationResult.style.color = 'red';
+        return;
+      }
+      verificationResult.textContent = 'Verifying...';
+      verificationResult.style.color = '#2980b9';
+
+      try {
+        const response = await fetch(`${API_BASE}/verify-certificate`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ certId })
+        });
+        const data = await response.json();
+        if(data.success && data.valid){
+          verificationResult.style.color = '#4CAF50';
+          verificationResult.textContent = data.message;
+        } else if (data.success) {
+          verificationResult.style.color = '#d63c5d';
+          verificationResult.textContent = data.message;
+        } else {
+          verificationResult.style.color = 'red';
+          verificationResult.textContent = 'Error verifying certificate.';
+        }
+      } catch (error) {
+        verificationResult.style.color = 'red';
+        verificationResult.textContent = 'Network error. Please try again later.';
+      }
+    });
+
+    // Enrollment form submission
+    const enrollForm = document.getElementById('enroll-form');
+    const enrollResult = document.getElementById('enroll-result');
+
+    enrollForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = {
+        name: enrollForm.name.value.trim(),
+        email: enrollForm.email.value.trim(),
+        phone: enrollForm.phone.value.trim(),
+        course: enrollForm.course.value,
+        message: enrollForm.message.value.trim()
+      };
+
+      if(!formData.name || !formData.email || !formData.phone || !formData.course) {
+        enrollResult.style.color = 'red';
+        enrollResult.textContent = 'Please fill in all required fields.';
+        return;
+      }
+
+      enrollResult.style.color = '#2980b9';
+      enrollResult.textContent = 'Submitting enrollment...';
+
+      try {
+        const response = await fetch(`${API_BASE}/enroll`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        const data = await response.json();
+        if(data.success){
+          enrollResult.style.color = '#4CAF50';
+          enrollResult.textContent = data.message;
+          enrollForm.reset();
+        } else {
+          enrollResult.style.color = 'red';
+          enrollResult.textContent = data.message || 'Error submitting enrollment.';
+        }
+      } catch (error) {
+        enrollResult.style.color = 'red';
+        enrollResult.textContent = 'Network error. Please try again later.';
+      }
+    });
+  </script>
+</body>
+</html>
