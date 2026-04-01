@@ -1,4 +1,4 @@
-# Shaan-Institute<!DOCTYPE html>
+# Shaan-Institute
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -144,8 +144,9 @@
 
         .course-card img {
             width: 100%;
-            height: 200px;
+            height: 250px; /* Increased height for better visibility */
             object-fit: cover;
+            image-rendering: high-quality; /* Ensures crisp rendering */
         }
 
         .course-content {
@@ -268,7 +269,7 @@
         <div class="courses-grid">
             
             <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80" alt="Fashion Designing">
+                <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1200&q=100" alt="Fashion Designing">
                 <div class="course-content">
                     <h3 class="course-title">Fashion Designing</h3>
                     <div class="course-details">
@@ -284,7 +285,7 @@
             </div>
 
             <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1601202864619-a1b606f71b9c?auto=format&fit=crop&w=600&q=80" alt="Embroidery">
+                <img src="https://images.unsplash.com/photo-1601202864619-a1b606f71b9c?auto=format&fit=crop&w=1200&q=100" alt="Embroidery">
                 <div class="course-content">
                     <h3 class="course-title">Embroidery</h3>
                     <div class="course-details">
@@ -301,7 +302,7 @@
             </div>
 
             <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1605280209590-76082c3580dd?auto=format&fit=crop&w=600&q=80" alt="Tailoring">
+                <img src="https://images.unsplash.com/photo-1605280209590-76082c3580dd?auto=format&fit=crop&w=1200&q=100" alt="Tailoring">
                 <div class="course-content">
                     <h3 class="course-title">Tailoring</h3>
                     <div class="course-details">
@@ -317,7 +318,7 @@
             </div>
 
             <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1588666308061-ce1ee015fc4b?auto=format&fit=crop&w=600&q=80" alt="Advance Tailoring">
+                <img src="https://images.unsplash.com/photo-1588666308061-ce1ee015fc4b?auto=format&fit=crop&w=1200&q=100" alt="Advance Tailoring">
                 <div class="course-content">
                     <h3 class="course-title">Advance Tailoring</h3>
                     <div class="course-details">
@@ -333,7 +334,7 @@
             </div>
 
             <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1563124508-e8a32b9b70bb?auto=format&fit=crop&w=600&q=80" alt="Mehendi">
+                <img src="https://images.unsplash.com/photo-1563124508-e8a32b9b70bb?auto=format&fit=crop&w=1200&q=100" alt="Mehendi">
                 <div class="course-content">
                     <h3 class="course-title">Mehendi</h3>
                     <div class="course-details">
@@ -343,7 +344,7 @@
             </div>
 
             <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=600&q=80" alt="Painting">
+                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1200&q=100" alt="Painting">
                 <div class="course-content">
                     <h3 class="course-title">Painting</h3>
                     <div class="course-details">
@@ -359,7 +360,7 @@
             </div>
 
             <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1556910103-1c02745a872f?auto=format&fit=crop&w=600&q=80" alt="Cooking">
+                <img src="https://images.unsplash.com/photo-1556910103-1c02745a872f?auto=format&fit=crop&w=1200&q=100" alt="Cooking">
                 <div class="course-content">
                     <h3 class="course-title">Cooking</h3>
                     <div class="course-details">
@@ -372,7 +373,7 @@
             </div>
 
             <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80" alt="Beautician">
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=100" alt="Beautician">
                 <div class="course-content">
                     <h3 class="course-title">Beautician</h3>
                     <div class="course-details">
@@ -407,7 +408,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Shaan Institute. All Rights Reserved. Regd No: MAH/943/08.</p>
+        <p>© 2026 Shaan Institute. All Rights Reserved. Regd No: MAH/943/08.</p>
     </footer>
 
 </body>
